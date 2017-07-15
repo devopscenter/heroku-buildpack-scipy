@@ -169,13 +169,11 @@ source $BIN_DIR/steps/cryptography
 # Numpy/scipy support
 source $BIN_DIR/steps/numpy-scipy
 
-# Support for NLTK corpora.
-let start=$(nowms)
-sub-env $BIN_DIR/steps/nltk
-mtime "nltk.download.time" "${start}"
-
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
+
+# Support for NLTK corpora.
+sub-env $BIN_DIR/steps/nltk
 
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
